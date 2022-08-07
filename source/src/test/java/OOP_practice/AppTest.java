@@ -10,11 +10,20 @@ import org.junit.Test;
 public class AppTest 
 {
     /**
-     * Rigorous Test :-)
+     * Testing Student Object Class
      */
     @Test
     public void shouldAnswerWithTrue()
     {
-        assertTrue( true );
+        Student std = 
+            new Student(
+                    145,
+                    "Steven",
+                    "Pembroke University",
+                    "187 Royal Lane"
+                    );
+        System.out.println(
+            std.getStudentID()+"\t"+std.getStudentName()+"\n"+
+            std.getStudentCollegeName()+"\t"+std.getStudentAddress());
     }
 }

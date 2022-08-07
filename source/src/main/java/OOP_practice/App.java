@@ -1,13 +1,15 @@
 package OOP_practice;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
-    }
+        Student student = new Student();
+        student.setStudentID(666);
+        student.setStudentCollegeName("East Carolina University");
+        student.setStudentAddress("517 Quantanamo Bay");
+        student.setStudentName("Lucifier");
+        
+    }   
 }
