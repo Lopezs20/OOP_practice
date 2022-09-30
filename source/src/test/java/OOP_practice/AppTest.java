@@ -26,4 +26,20 @@ public class AppTest
             std.getStudentID()+"\t"+std.getStudentName()+"\n"+
             std.getStudentCollegeName()+"\t"+std.getStudentAddress());
     }
+
+
+    /**
+     * Testing Television functionalities
+     */
+    @Test
+    public void shouldPrintTimeStamp()
+    {
+
+        Television sony = new Television();
+        sony.printTimeStamp();
+    }
+
+    /**
+     * Testing TV_remote functionalities
+     */
 }
