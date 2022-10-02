@@ -39,6 +39,24 @@ public class AppTest
         sony.printTimeStamp();
     }
 
+    @Test
+    public void shouldturnON()
+    {
+
+        Television sony = new Television();
+        TV_remote remote = new TV_remote();
+        remote.turnON(sony);
+    }
+
+    @Test
+    public void shouldturnOFF()
+    {
+
+        Television sony = new Television();
+        TV_remote remote = new TV_remote();
+        remote.turnOFF(sony);
+    }
+
     /**
      * Testing TV_remote functionalities
      */

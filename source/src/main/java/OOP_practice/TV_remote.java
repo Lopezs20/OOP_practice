@@ -4,13 +4,18 @@ import java.security.Timestamp;
 import java.util.ArrayList;
 
 public class TV_remote implements RemoteInterface{
-    
+
     protected int remote_volume = 0;
+
+    private boolean powerStatus = false; 
 
     public TV_remote(){
         
     }
     
+    //TODO make a tv interface or use remote interface to relect these methods towards tv obj.
+    // make sure that this tv obj is soley abstracted and not used anywhwere else.
+
     public int volumeUP(){
         return 5 + this.remote_volume;
     }
@@ -19,18 +24,21 @@ public class TV_remote implements RemoteInterface{
         return -5 + this.remote_volume;
     }
 
-    public boolean turnON(){
+    public boolean turnON(Television teleV){
+        //set function to turn on at television obj rather than use global var here
+        teleV.powerON();
         return true;
     }
 
-    public boolean turnOFF(){
+    public boolean turnOFF(Television teleV){
+        teleV.powerOFF();
         return false;
     }
 
     public boolean record(){
         System.out.println("Recording has started. Press RECORD STOP when finished.");
         return true;
-    }
+    }   
 
     public boolean recordStop(){
         System.out.println("Recording has ended...");
@@ -39,7 +47,7 @@ public class TV_remote implements RemoteInterface{
 
     public void start(){
         System.out.println("Broadcast has resumed!\nYou are watching prime time television!");
-    }
+    }   
 
     public void stop(){
         System.out.println("Broadcast has been stopped!\nPress start to continue prime time television.");
