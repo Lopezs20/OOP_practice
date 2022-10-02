@@ -14,25 +14,33 @@ public class TV_remote implements RemoteInterface{
     }
     
     //TODO make a tv interface or use remote interface to relect these methods towards tv obj.
-    // make sure that this tv obj is soley abstracted and not used anywhwere else.
+    // make sure that passing tv obj is soley abstracted and not used anywhwere else.
 
-    public int volumeUP(){
-        return 5 + this.remote_volume;
+    public int volumeUP(Television tv){
+        this.remote_volume = 5 + this.remote_volume;
+        tv.volume(remote_volume);
+        return this.remote_volume;
     }
 
-    public int volumeDOWN(){
-        return -5 + this.remote_volume;
+    public int volumeDOWN(Television tv){
+        this.remote_volume = -5 + this.remote_volume;
+        tv.volume(remote_volume);
+        return this.remote_volume;
     }
 
     public boolean turnON(Television teleV){
         //set function to turn on at television obj rather than use global var here
         teleV.powerON();
-        return true;
+        return powerStatus = true;
     }
 
     public boolean turnOFF(Television teleV){
         teleV.powerOFF();
-        return false;
+        return powerStatus = false;
+    }
+
+    public void checkPowerStatus(){
+        System.out.println("Power Status: " + powerStatus);
     }
 
     public boolean record(){

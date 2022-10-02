@@ -11,7 +11,7 @@ public interface RemoteInterface {
     boolean recordStop();
     boolean turnON(Television tv);
     boolean turnOFF(Television tv);
-    int volumeUP();
-    int volumeDOWN();
+    int volumeUP(Television tv);
+    int volumeDOWN(Television tv);
 
 }

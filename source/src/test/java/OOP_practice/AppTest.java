@@ -29,7 +29,7 @@ public class AppTest
 
 
     /**
-     * Testing Television functionalities
+     * Testing TV_remote functionalities
      */
     @Test
     public void shouldPrintTimeStamp()
@@ -57,7 +57,40 @@ public class AppTest
         remote.turnOFF(sony);
     }
 
+    @Test
+    public void shouldVolumeUP()
+    {
+
+        Television sony = new Television();
+        TV_remote remote = new TV_remote();
+        remote.volumeUP(sony);
+    }
+
+    @Test
+    public void shouldVolumeUP_twice()
+    {
+
+        Television sony = new Television();
+        TV_remote remote = new TV_remote();
+        remote.volumeUP(sony);
+        remote.volumeUP(sony);
+    }
+
+    @Test
+    public void shouldVolumeUP_quad()
+    {
+
+        Television sony = new Television();
+        TV_remote remote = new TV_remote();
+        remote.volumeUP(sony);
+        remote.volumeUP(sony);
+        remote.volumeUP(sony);
+        remote.volumeUP(sony);
+    }
+
+
     /**
-     * Testing TV_remote functionalities
+     * Testing Televison functionalities
      */
+    
 }

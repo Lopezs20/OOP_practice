@@ -1,14 +1,11 @@
 package OOP_practice;
 
 import java.util.ArrayList;
-
-import javax.swing.plaf.synth.SynthInternalFrameUI;
-
 import java.sql.Time;
 import java.sql.Timestamp;
 
 public class Television{
-    private int[] volume = new int[100];
+    private int currVolume = 0;
     private ArrayList<Integer> channels = new ArrayList<>();
     private Timestamp timeStamp = new Timestamp(System.currentTimeMillis());
     private boolean power;
@@ -43,4 +40,27 @@ public class Television{
         System.out.println("Television has been turned OFF.");
     }
     
+    protected void volume(int vol){
+        if(vol <= 0){
+            currVolume = 0;
+            messageVolume();
+        }
+        if(vol > 100){
+            currVolume = 100;
+            messageVolume();
+        }
+        else {
+            currVolume = vol;
+            messageVolume();
+        }
+    }
+
+    protected void messageVolume(){
+        if (currVolume <= 0){
+            System.out.println("Volume is at 0.");
+        }
+        else {
+            System.out.println("Current volume is at " + currVolume);
+        }
+    }
 }
