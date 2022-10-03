@@ -41,7 +41,7 @@ public class Television{
     }
     
     protected void volume(int vol){
-        if(vol <= 0){
+        if(vol < 0){
             currVolume = 0;
             messageVolume();
         }
@@ -49,14 +49,14 @@ public class Television{
             currVolume = 100;
             messageVolume();
         }
-        else {
+        if(vol < 100 && vol > 0){
             currVolume = vol;
             messageVolume();
         }
     }
 
     protected void messageVolume(){
-        if (currVolume <= 0){
+        if (currVolume == 0){
             System.out.println("Volume is at 0.");
         }
         else {
